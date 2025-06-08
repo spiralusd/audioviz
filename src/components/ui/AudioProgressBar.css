@@ -1,0 +1,56 @@
+.audio-progress-container {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.audio-time-display {
+  font-size: 12px;
+  color: #888;
+  padding: 0 8px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.audio-progress-bar {
+  flex: 1;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.audio-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color, var(--primary-color)));
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.1s;
+}
+
+.audio-progress-handle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  transition: transform 0.1s;
+}
+
+.audio-progress-handle:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Style for when dragging */
+.audio-progress-bar.dragging .audio-progress-handle {
+  transform: translate(-50%, -50%) scale(1.2);
+}
